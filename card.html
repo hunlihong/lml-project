@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        width: 200px;
+        height: 200px;
+        perspective: 1000px;
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: all 0.5s;
+        transform-style: preserve-3d;
+      }
+      .inner-front,
+      .inner-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: green;
+        -webkit-background-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .inner-front {
+        background-color: blue;
+      }
+      .card:hover > .container {
+        transform: rotateY(180deg);
+      }
+      .inner-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="container">
+        <div class="inner-front">
+          <h2>Hover me</h2>
+        </div>
+        <div class="inner-back">
+          <h2>Hello World</h2>
+        </div>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>
